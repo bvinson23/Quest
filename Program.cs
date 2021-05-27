@@ -35,6 +35,11 @@ namespace Quest
                     4, 20
                 );
 
+                Challenge apollo = new Challenge("Which Apollo mission landed the first two men on the moon?", 11, 10);
+
+                Challenge landLocked = new Challenge("How how many landlocked countries are there in South America?", 2, 40);
+
+
                 // "Awesomeness" is like our Adventurer's current "score"
                 // A higher Awesomeness is better
 
@@ -72,13 +77,26 @@ namespace Quest
                 theAnswer,
                 whatSecond,
                 guessRandom,
-                favoriteBeatle
+                favoriteBeatle,
+                apollo,
+                landLocked
             };
 
                 // Loop through all the challenges and subject the Adventurer to them
-                foreach (Challenge challenge in challenges)
+                Random i = new Random();
+                List<int> indexes = new List<int> {};
+                while (indexes.Count < 5)
                 {
-                    challenge.RunChallenge(theAdventurer);
+                    int candidate = i.Next(0, challenges.Count);
+                    if (!indexes.Contains(candidate)) {
+                        indexes.Add(candidate);
+                    }
+                }
+
+                for (int x = 0; x < indexes.Count; x++)
+                {
+                    int index = indexes[x];
+                    challenges[index].RunChallenge(theAdventurer);
                 }
 
                 // This code examines how Awesome the Adventurer is after completing the challenges

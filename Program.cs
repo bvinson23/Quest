@@ -59,6 +59,8 @@ namespace Quest
                     AddHat.ShininessLevel = 7;
                 }
 
+                Prize AddPrize = new Prize("#1 Sister mug");
+
                 Adventurer theAdventurer = new Adventurer(AddName, AddRobe, AddHat);
                 theAdventurer.GetDescription();
 
@@ -93,6 +95,7 @@ namespace Quest
                 {
                     Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
                 }
+                AddPrize.ShowPrize(theAdventurer);
                 Console.Write("Would you like to play again? (Y/N): ");
                 string yesOrNo = Console.ReadLine().ToLower();
                 if (yesOrNo == "y")

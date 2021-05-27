@@ -54,7 +54,12 @@ namespace Quest
                     AddRobe.AddRobeColor("blue");
                 }
 
-                Adventurer theAdventurer = new Adventurer(AddName, AddRobe);
+                Hat AddHat = new Hat();
+                {
+                    AddHat.ShininessLevel = 7;
+                }
+
+                Adventurer theAdventurer = new Adventurer(AddName, AddRobe, AddHat);
                 theAdventurer.GetDescription();
 
                 // A list of challenges for the Adventurer to complete

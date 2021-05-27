@@ -16,13 +16,16 @@ namespace Quest
         //  So it can be read and changed by any code in the application
         public int Awesomeness { get; set; }
 
+        public Hat aHat { get; }
+
 
         // A constructor to make a new Adventurer object with a given name
-        public Adventurer(string name, Robe robe)
+        public Adventurer(string name, Robe robe, Hat hat)
         {
             Name = name;
             Awesomeness = 50;
             ColorfulRobe = robe;
+            aHat = hat;
         }
 
 
@@ -59,6 +62,7 @@ namespace Quest
             {
                 Console.WriteLine($"{color}");
             }
+            Console.WriteLine($"Oh, and your hat is {aHat.ShininessDescription}");
         }
     }
 }

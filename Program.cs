@@ -114,9 +114,11 @@ namespace Quest
                     Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
                 }
 
-                // int compNum = challenges.RunChallenge(theAdventurer).correctAnswer.Count;
-                // Console.WriteLine($"You completed {compNum} challenges!");
                 AddPrize.ShowPrize(theAdventurer);
+                Console.WriteLine($"You completed {theAdventurer.Correct} challenges!");
+                Console.WriteLine();
+
+                theAdventurer.Awesomeness = 50 + theAdventurer.Correct * 10;
                 Console.Write("Would you like to play again? (Y/N): ");
                 string yesOrNo = Console.ReadLine().ToLower();
                 if (yesOrNo == "y")
